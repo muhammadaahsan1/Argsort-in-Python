@@ -1,0 +1,29 @@
+#Example of creating a data frame from list and dictionary
+
+import pandas as pd
+L1=[1,2,3,4,5]
+df1=pd.DataFrame(L1)
+print(df1)
+
+D1={'Fruit names':['apple', 'mango', 'banana'], 'count': ['5', '10', '20']}
+df2=pd.DataFrame(D1)
+print(df2)
+
+
+
+# Example of Extracting only certain records from excel
+
+iris=pd.read_csv(r'//Downloads//check1//check2//iris.csv')
+print(iris.head())
+
+print(iris[(iris['sepal.length']>5) & (iris["sepal.width"]>3)])
+
+iris1 = iris   
+
+#iloc function helps you select a particular cell of dataset, 
+#.iloc[] is primarily integer position based (from 0 to length-1 of the axis), but may also be used with a boolean array. , 
+#loc is used to index a pandas DataFrame or Series using labels. On the other hand, iloc can be used to retrieve records based on their positional index.
+
+iris.iloc[0:10,1]=np.NAN              
+print(iris.head())
+print(iris1.head())
